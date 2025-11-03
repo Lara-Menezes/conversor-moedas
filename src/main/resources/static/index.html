@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Conversor de Moedas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Conversor de Moedas</title>
 </head>
-
 <body>
-    <!-- Formulário de conversão -->
-    <form class="card" id="converter-form">
-        <img src="/images/Group 2.png" alt="Ícone de moeda" class="img-card">
+  <!-- Menu lateral -->
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li class="active"><a href="index.html">Conversor</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+    </ul>
+  </div>
 
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <!-- CARD DE CONVERSÃO -->
+    <div class="card" id="converter-card">
+      <img src="/images/Group 2.png" alt="Ícone de moeda" class="img-card" />
+
+      <form id="converter-form">
         <div class="converted-values">
-            <input type="number" id="valueConvertido" placeholder="Digite o valor:" min="0" step="0.1" required>
-
-            <label for="valor-select" class="label-form">De:</label>
-            <select id="from-convert" required>
-                <option value="USD">USD - Dólar</option>
-                <option value="EUR">EUR - Euro</option>
-                <option value="BRL" selected>BRL - Real</option>
-                <option value="GBP">GBP - Libra</option>
-                <option value="JPY">JPY - Iene</option>
-                <option value="CAD">CAD - Dólar Canadense</option>
-                <option value="AUD">AUD - Dólar Australiano</option>
-                <option value="CHF">CHF - Franco Suíço</option>
-                <option value="CNY">CNY - Yuan</option>
-                <option value="ARS">ARS - Peso Argentino</option>
-            </select>
+          <input type="number" id="valueConvertido" placeholder="Digite o valor:" min="0" step="0.1"/>
+          <label for="from-convert" class="label-form">De:</label>
+          <select id="from-convert"></select>
         </div>
 
         <div class="resultconverted">
-            <label for="convert-select" class="label-form">Para:</label>
-            <select id="to-convert" required>
-                <option value="USD" selected>USD - Dólar</option>
-                <option value="EUR">EUR - Euro</option>
-                <option value="BRL">BRL - Real</option>
-                <option value="GBP">GBP - Libra</option>
-                <option value="JPY">JPY - Iene</option>
-                <option value="CAD">CAD - Dólar Canadense</option>
-                <option value="AUD">AUD - Dólar Australiano</option>
-                <option value="CHF">CHF - Franco Suíço</option>
-                <option value="CNY">CNY - Yuan</option>
-                <option value="ARS">ARS - Peso Argentino</option>
-            </select>
-
-            <input type="text" id="resultValueConvertido" placeholder="Valor convertido" readonly>
+          <label for="to-convert" class="label-form">Para:</label>
+          <select id="to-convert"></select>
+          <input type="text" id="resultValueConvertido" placeholder="Valor convertido" readonly/>
         </div>
 
         <div class="buttons">
-            <button class="btn-inverter" id="invertevalues">
-                <img src="/images/Vector.png" alt="Inverter" class="invert-icon">
-            </button>
-            <button type="submit" class="btn-converter" id="convertvalues">CONVERTER</button>
+          <button class="btn-inverter" id="invertevalues">
+            <img src="/images/Vector.png" alt="Inverter" class="invert-icon" />
+          </button>
+          <button type="submit" class="btn-converter" id="convertvalues">
+            CONVERTER
+          </button>
         </div>
-    </form>
+      </form>
+    </div>
 
-    <canvas id="moneyParticles"></canvas>
-    <script src="particle.js"></script>
-    <script src="script.js"></script>
+    <!-- CARD DE RESULTADO -->
+    <div class="card" id="resultado-card">
+      <h3>Resultado da Conversão</h3>
+      <p id="textoResultado">Nenhuma conversão realizada ainda.</p>
+      <canvas id="graficoCambio" width="300" height="200"></canvas>
+    </div>
+  </div>
+
+  <canvas id="moneyParticles"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="particle.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
