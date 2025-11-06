@@ -55,7 +55,8 @@ async function converter() {
         if (!response.ok) throw new Error("Erro na conversão");
 
         const data = await response.json();
-        const resultado = data.resultado ?? data.convertedValue ?? data.result ?? data.valorConvertido;
+        const resultado = data.convertedAmount ?? data.resultado ?? data.convertedValue ?? data.result ?? data.valorConvertido;
+
 
         if (!resultado) throw new Error("Sem resultado");
 
