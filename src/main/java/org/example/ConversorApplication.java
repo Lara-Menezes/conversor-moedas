@@ -1,12 +1,15 @@
 package org.example;
 
+import org.example.service.HistoricoService;
+import org.example.service.RelatorioService;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 
-// tive que tirar o banco da execução por enquanto. já que não estava em uso por agora
-//se for tirar a parte do exclude, lembrar de colocar certo o banco para não da erro
-@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+import java.time.LocalDate;
+
+@SpringBootApplication
 public class ConversorApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConversorApplication.class, args);

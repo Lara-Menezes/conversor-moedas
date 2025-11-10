@@ -62,6 +62,19 @@ async function converter() {
 
         resultInput.value = resultado.toFixed(2);
         resultInput.classList.add("success");
+        // Salva as moedas usadas para o relatório
+        localStorage.setItem("moedaDe", de);
+        localStorage.setItem("moedaPara", para);
+
+        try {
+          // dispara geração/import (aguarde opcionalmente)
+          await fetch(`http://localhost:8080/api/relatorios/gerar/por-par?from=${de}&to=${para}`, {
+            method: 'POST'
+          });
+          // opcional: console.log('Relatório gerado para', de, '->', para);
+        } catch (err) {
+          console.error('Erro ao solicitar geração do relatório:', err);
+        }
 
         // Mostrar card de resultado
         const resultadoCard = document.getElementById('resultado-card');
