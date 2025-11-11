@@ -1,192 +1,223 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-    margin: 0;
-    height: 100vh;
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(-45deg, #000000, #1a1a1a, #141414, #000000);
-    background-size: 400% 400%;
-    animation: moveBg 10s ease infinite;
-    color: white;
-    display: flex;
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #141414, #000000);
+  background-size: 400% 400%;
+  animation: moveBg 10s ease infinite;
+  color: white;
+  display: flex;
 }
 
 @keyframes moveBg {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Sidebar */
 .sidebar {
-    width: 220px;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    color: white;
+  width: 220px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
 }
 
 .sidebar h2 { 
-    margin-bottom: 30px; 
+  margin-bottom: 30px; 
 }
 
 .sidebar ul { 
-    list-style: none; 
-    padding: 0; 
+  list-style: none; 
+  padding: 0; 
 }
 
 .sidebar ul li {
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: 0.3s;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
 .sidebar ul li:hover, 
 .sidebar ul li.active {
-    background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.1);
 }
 
 .sidebar ul li a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    color: #f0f0f0;
+  color: #f0f0f0;
 }
 
 /* Main content */
 .main-content {
-    margin-left: 240px; 
-    width: calc(100% - 240px);
-    padding: 30px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    min-height: 100vh;
+  margin-left: 240px; 
+  width: calc(100% - 240px);
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-height: 100vh;
+  flex-wrap: wrap;
 }
 
 /* Cards */
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    padding: 40px 35px;
-    text-align: center;
-    width: 320px;
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
-    transition: 0.3s;
-}
-
-#resultado-card {
-    display: none;
-}
-
-#resultado-card.show {
-    display: block;
-    animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 40px 35px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
 }
 
 .img-card { 
-    width: 78px; 
-    height: 78px; 
-    margin-bottom: 25px; 
+  width: 78px; 
+  height: 78px; 
+  margin-bottom: 25px; 
 }
 
 /* Inputs e selects */
 input, select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #ffffff;
-    border-radius: 15px;
-    background-color: transparent; 
-    color: white;      
-    font-size: 15px;
-    outline: none;
-    box-sizing: border-box;
-    transition: 0.3s;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  background-color: transparent; 
+  color: white;      
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 input:focus, select:focus {
-    background: black;
-    color: white;
-    border-color: white;
+  background: black;
+  color: white;
+  border-color: white;
 }
 
 #resultValueConvertido.success {
-    border-color: #4CAF50;
-    color: #4CAF50;
+  border-color: #4CAF50;
+  color: #4CAF50;
 }
 
 /* Botões */
 .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
 }
 
 .btn-converter, .btn-inverter {
-    background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
-    border: 1px solid white;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: 0.5s;
+  background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
+  border: 1px solid white;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.5s;
 }
 
 .btn-inverter {
-    width: 50px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-inverter img.invert-icon { 
-    width: 15px; 
-    height: 15px; 
-    object-fit: contain; 
+  width: 15px; 
+  height: 15px; 
+  object-fit: contain; 
 }
 
 .btn-inverter:hover, .btn-converter:hover {
-    transform: scale(1.09);
-    box-shadow: 2px 0 10px 0 rgba(255, 255, 255, 0.774);
+  transform: scale(1.09);
+  box-shadow: 2px 0 10px 0 rgba(255, 255, 255, 0.774);
 }
 
 .btn-converter:hover {
-    background: white;
-    color: black;
+  background: white;
+  color: black;
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
+/* ===== Ajuste do card de resultado ===== */
+#resultado-card {
+  display: none;
+}
+
+#resultado-card.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 350px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 25px;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+#resultado-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+#resultado-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+#resultado-card canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fundo animado */
+canvas#moneyParticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
