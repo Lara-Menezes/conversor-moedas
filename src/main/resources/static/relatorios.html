@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <title>Relatórios - Conversor de Moedas</title>
+  <style>
+    /* Ajustes específicos para página de relatórios */
+    .relatorio-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      padding: 30px 40px;
+      box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+    }
+
+    .relatorio-container h3 {
+      margin-bottom: 25px;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+
+    #reportChart {
+      width: 100% !important;
+      max-width: 600px;
+      height: 300px !important;
+      margin-bottom: 30px;
+    }
+
+    #tabela-relatorios {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    #tabela-relatorios th, #tabela-relatorios td {
+      padding: 10px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #tabela-relatorios th {
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+    }
+
+    #tabela-relatorios tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    #tabela-relatorios tr:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  </style>
 </head>
 
 <body>
@@ -19,17 +73,21 @@
   </div>
 
   <div class="main-content">
-    <div class="card">
-      <h3>Relatórios de Moedas</h3>
-      <canvas id="reportChart" style="width:100%; max-width:400px; margin-top:20px;"></canvas>
-      <table id="tabela-relatorios" border="1" style="margin-top:20px; color:white; width:80%;">
-        <tr>
-          <th>Moeda base</th>
-          <th>Média da Semana</th>
-          <th>Valor atual</th>
-          <th>Crescimento</th>
-          <th>Período</th>
-        </tr>
+    <div class="relatorio-container">
+      <h3>📊 Relatórios de Moedas</h3>
+      <canvas id="reportChart"></canvas>
+
+      <table id="tabela-relatorios">
+        <thead>
+          <tr>
+            <th>Moeda base</th>
+            <th>Média da Semana</th>
+            <th>Valor atual</th>
+            <th>Crescimento</th>
+            <th>Período</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
       </table>
     </div>
   </div>
